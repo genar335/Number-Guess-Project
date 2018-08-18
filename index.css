@@ -1,0 +1,58 @@
+
+
+body {
+  background-color: silver;
+  margin: 0px;
+}
+
+.mainContainer {
+  margin: auto;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background-color: yellow;
+
+}
+
+.dialogueBox {
+  float: right;
+  background-color: gray;
+  object-fit: cover;
+  height: 100%;
+  width: 50%;
+
+  position: absolute;
+  top: 0;
+  left: 50%;
+}
+
+.numberPad {
+  --left-postion: .numberPad.object-position;
+  float: left;
+  background-color: indigo;
+  width: 50%;
+  height: 100%;
+}
+
+.buttonNumber {
+  color: green;
+  height: auto;
+  width: 50px;
+  cursor: crosshair;
+  background-color: yellow;
+  margin: 10px;
+
+}
+
+.display {
+  position: relative;
+  padding: 10px;
+  width: 100%;
+}
+
+.numberGrid {
+  display: grid;
+  position: relative;
+  width: auto;
+  height: auto;
+}

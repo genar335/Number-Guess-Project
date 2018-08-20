@@ -11,7 +11,7 @@ body {
   background-color: rgba(88, 85, 11, 0.72);
 }
 
-//dialogueBox part beggining
+/*dialogueBox part beggining*/
 .dialogueBox {
   float: right;
   background-color: rgb(94, 113, 102);
@@ -31,10 +31,9 @@ body {
 
 .smallerContainer {}
 
-//dialogueBox part end
-//numberPad part beggining
+/*dialogueBox part end*/
+/*numberPad part beggining*/
 .numberPad {
-  --left-postion: .numberPad.object-position;
   float: left;
   background-color: indigo;
   width: 50%;
@@ -63,4 +62,4 @@ body {
   height: auto;
 }
 
-//numberPad partt end
+/*numberPad part end*/

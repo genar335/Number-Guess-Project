@@ -24,13 +24,34 @@ header {
   width: auto;
   grid-column: 2;
   grid-row: 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 20% 1fr;
 }
 
-.rangeSelector {}
+.rangeSelector, .textBox {
+  background-color: silver;
+  grid-column: 1/3;
+  grid-row: 1;
+}
+/*
+.textBox {
+  background-color: silver;
+  grid-column: 1/3;
+  grid-row: 1;
+}
+*/
+.smallerContainer {
+  background-color:rgba(207, 74, 238, 0.83);
+  grid-column: 1;
+  grid-row: 2;
+}
 
-.textBox {}
-
-.smallerContainer {}
+.biggerContainer {
+  background-color:rgba(207, 74, 238, 0.83);
+  grid-column: 2;
+  grid-row: 2;
+}
 
 /*dialogueBox part end*/
 

@@ -5,7 +5,7 @@ const buttons = document.body.querySelectorAll('.buttons');
 //Assigning variables
 var input = '';
 var unknownNumber = 0;
-
+/*
 var one = document.getElementById("one");
 var two = document.getElementById("two");
 var three = document.getElementById("three");
@@ -16,13 +16,17 @@ var seven = document.getElementById("seven");
 var eight = document.getElementById("eight");
 var nine = document.getElementById("nine");
 var zero = document.getElementById("zero");
-
+*/
 var numbers = ["one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "zero"];
+
+
 var switcher = false; //switcher for cleaninf the display
 //
 function getNewNumber() {
   unknownNumber = Math.floor(Math.random() * 100);
 }
+
+
 
 /*
 document.addEventListener('click', function(event) {
@@ -38,11 +42,13 @@ document.onclick = function() {
       switcher = true;
     }
     output.innerText += event.target.innerText;
-  }; 
-  if (event.target.className == "buttonClear"){
+  };
+  if (event.target.className == "buttonClear") {
     output.innerText = "";
   };
 };
+
+
 
 /*
 one.onclick = function () {

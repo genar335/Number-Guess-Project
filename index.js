@@ -1,92 +1,82 @@
-//Getting DOM objects
-const output = document.querySelector('.display');
-const buttons = document.body.querySelectorAll('.buttons');
+window.onload = function() {
+  //Getting DOM objects
+  const output = document.querySelector('.display');
+  const buttons = document.body.querySelectorAll('.buttons');
+  const textBox = document.querySelector('.textBox');
+  const sContainer = document.querySelector('.smallerContainer');
+  const bContainer = document.querySelector('.biggerContainer');
 
-//Assigning variables
-var input = '';
-var unknownNumber = 0;
-/*
-var one = document.getElementById("one");
-var two = document.getElementById("two");
-var three = document.getElementById("three");
-var four = document.getElementById("four");
-var five = document.getElementById("five");
-var six = document.getElementById("six");
-var seven = document.getElementById("seven");
-var eight = document.getElementById("eight");
-var nine = document.getElementById("nine");
-var zero = document.getElementById("zero");
-*/
-var numbers = ["one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "zero"];
+  //Assigning variables
+  var input = "";
+  var unknownNumber = 0;
+  var numbers = ["one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "zero"];
+  var str = "";
+  var minLimit = 0;
+  var maxLimit = 0;
+  var switcher = false; //switcher for cleaninf the display
+  //
+  function getNewNumber(minLimit, maxLimit) {
+    unknownNumber = Math.floor((Math.random()) * ((maxLimit - minLimit) + minLimit));
+  }
 
+  document.onclick = function() {
 
-var switcher = false; //switcher for cleaninf the display
-//
-function getNewNumber() {
-  unknownNumber = Math.floor(Math.random() * 100);
-}
+    if (event.target.id == "0-100") {
+      maxLimit = 100;
+      getNewNumber(minLimit, maxLimit);
+      alert(unknownNumber);
+    };
+    if (event.target.id == "0-500") {
+      maxLimit = 500;
+      getNewNumber(minLimit, maxLimit);
+    };
+    if (event.target.id == "0-1000") {
+      maxLimit = 1000;
+      getNewNumber(minLimit, maxLimit);
+    };
 
-
-
-/*
-document.addEventListener('click', function(event) {
-  event = event || window.event;
-  var target = event.target || event.srcElement,
-    text = target.textContent || text.innerText;
-}, false);
-*/
-document.onclick = function() {
-  if (numbers.includes(event.target.id)) {
-    if (switcher == false) {
+    if (numbers.includes(event.target.id)) {
+      if (switcher == false) {
+        output.innerText = "";
+        switcher = true;
+      }
+      buttonValue = event.target.innerText;
+      output.innerText += buttonValue;
+    };
+    if (event.target.className == "buttonClear") {
       output.innerText = "";
-      switcher = true;
+    };
+    if (event.target.className == "buttonEnter") {
+      numberGuesser();
+      output.innerText = "";
     }
-    output.innerText += event.target.innerText;
   };
-  if (event.target.className == "buttonClear") {
-    output.innerText = "";
-  };
-};
 
-
-
-/*
-one.onclick = function () {
-  output.innerText += "1";
-};
-two.onclick = function () {
-  output.innerText += "2";
-};
-three.onclick = function () {
-  output.innerText += "3";
-};
-four.onclick = function () {
-  output.innerText += "4";
-};
-five.onclick = function () {
-  output.innerText += "5";
-};
-six.onclick = function () {
-  output.innerText += "6";
-};
-seven.onclick = function () {
-  output.innerText += "7";
-};
-eight.onclick = function () {
-  output.innerText += "8";
-};
-nine.onclick = function () {
-  output.innerText += "9";
-};
-zero.onclick = function () {
-  output.innerText += "0";
-};
+  function numberGuesser() {
+    var str = output.innerText;
+    var value = parseInt(str);
+    var switcheer = false;
+    /*
+    if (switcheer == false && ) {
+      sContainer.innerText = "";
+      bContainer.innerText = "";
+      switcher = true;
+    };
 */
+    if (value != unknownNumber) {
+      textBox.innerText = "Wrong";
+      if (value < unknownNumber) {
+        sContainer.innerText += value;
+      };
+      if (value > unknownNumber) {
+        bContainer.innerText += value;
+      };
+    } else {
+      textBox.innerText = "You are correct!";
+      switcheer = false;
+      sContainer.innerText = "";
+      bContainer.innerText = "";
+    };
+  }
 
-
-/*
-document.querySelector('html').onclick = function() {
-  alert('Ouch! Stop poking me!');
-  output.innerHTML = "Heya";
 };
-*/
